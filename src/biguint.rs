@@ -2143,6 +2143,12 @@ impl BigUint {
         self.data.clone()
     }
 
+    #[doc(hidden)]
+    #[inline]
+    pub fn as_slice(&self) -> &[u32] {
+        self.data.as_slice()
+    }
+
     /// Returns the integer formatted as a string in the given radix.
     /// `radix` must be in the range `2...36`.
     ///

@@ -2801,6 +2801,12 @@ impl BigInt {
         (self.sign, self.data.to_u32_digits())
     }
 
+    #[doc(hidden)]
+    #[inline]
+    pub fn as_slice(&self) -> (Sign, &[u32]) {
+        (self.sign, self.data.as_slice())
+    }
+
     /// Returns the two's-complement byte representation of the `BigInt` in big-endian byte order.
     ///
     /// # Examples
